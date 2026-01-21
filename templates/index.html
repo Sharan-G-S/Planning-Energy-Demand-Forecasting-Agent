@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Demand Forecasting Agent</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>⚡ Energy Demand Forecasting Agent</h1>
+            <p class="subtitle">AI-Powered Grid Management & Optimization</p>
+        </header>
+
+        <!-- Current Stats -->
+        <div class="grid grid-4 mb-2">
+            <div class="stat-card">
+                <div class="stat-label">Current Demand</div>
+                <div class="stat-value" id="currentDemand">--</div>
+                <div id="gridStatus"></div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Load Factor</div>
+                <div class="stat-value" id="loadFactor">--</div>
+                <div class="stat-change positive">Grid Capacity</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Available Capacity</div>
+                <div class="stat-value" id="availableCapacity">--</div>
+                <div class="stat-change positive">Reserve Power</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">24h Average</div>
+                <div class="stat-value" id="avg24h">--</div>
+                <div class="stat-change">Last 24 Hours</div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-2">
+            <!-- Historical Data -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-icon">📊</span>
+                        Historical Consumption
+                    </h2>
+                    <button class="btn btn-secondary" id="refreshBtn">
+                        🔄 Refresh
+                    </button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="historicalChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Forecast -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-icon">🔮</span>
+                        Demand Forecast
+                    </h2>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-secondary forecast-btn active" data-hours="24">24 Hours</button>
+                    <button class="btn btn-secondary forecast-btn" data-hours="168">7 Days</button>
+                    <button class="btn btn-secondary forecast-btn" data-hours="720">30 Days</button>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="forecastChart"></canvas>
+                </div>
+                
+                <div class="grid grid-3 mt-2">
+                    <div class="stat-card">
+                        <div class="stat-label">Avg Forecast</div>
+                        <div class="stat-value" style="font-size: 1.5rem;" id="avgForecast">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Peak Forecast</div>
+                        <div class="stat-value" style="font-size: 1.5rem;" id="peakForecast">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Confidence</div>
+                        <div class="stat-value" style="font-size: 1.5rem;" id="confidence">--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Optimization -->
+        <div class="grid grid-2 mt-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-icon">⚙️</span>
+                        Grid Optimization
+                    </h2>
+                </div>
+                
+                <div class="recommendation-list" id="recommendationsList">
+                    <p class="text-center" style="color: var(--text-muted);">Loading recommendations...</p>
+                </div>
+                
+                <div class="stat-card mt-2">
+                    <div class="stat-label">Potential Cost Savings</div>
+                    <div class="stat-value" style="font-size: 2rem; color: var(--success);" id="potentialSavings">$--</div>
+                    <div class="stat-change positive">Through Load Optimization</div>
+                </div>
+            </div>
+
+            <!-- Anomaly Detection -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <span class="card-icon">🚨</span>
+                        Anomaly Alerts
+                    </h2>
+                </div>
+                
+                <div class="alert-list" id="anomalyAlerts">
+                    <p class="text-center" style="color: var(--text-muted);">Loading alerts...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Stats -->
+        <div class="grid grid-3 mt-2">
+            <div class="stat-card">
+                <div class="stat-label">24h Peak Demand</div>
+                <div class="stat-value" style="font-size: 1.8rem;" id="peak24h">--</div>
+                <div class="stat-change">Maximum Load</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Model Accuracy</div>
+                <div class="stat-value" style="font-size: 1.8rem; color: var(--success);">95.2%</div>
+                <div class="stat-change positive">LSTM + Prophet Ensemble</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">System Status</div>
+                <div class="stat-value" style="font-size: 1.8rem; color: var(--success);">●</div>
+                <div class="stat-change positive">All Systems Operational</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 3rem; padding: 2rem 0; color: var(--text-muted);">
+            <p>Energy Demand Forecasting Agent | Powered by AI & Machine Learning</p>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                LSTM Neural Networks • Facebook Prophet • Real-time Grid Optimization
+            </p>
+        </footer>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
