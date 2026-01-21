@@ -23,12 +23,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environment variables
-.env
-.venv
+# Virtual environments
+venv/
+ENV/
+env/
 
 # IDE
 .vscode/
@@ -41,12 +39,8 @@ wheels/
 .DS_Store
 Thumbs.db
 
-# Model files (optional - uncomment if models are too large)
-# saved_models/*.h5
-# saved_models/*.pkl
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Data files (optional - uncomment if data is too large)
-# data/*.csv
-
-# Logs
-*.log
+# Environment variables
+.env
