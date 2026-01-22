@@ -332,20 +332,12 @@ WEATHER_API_KEY = 'your_api_key'  # Optional
 NUM_SMART_METERS = 1000
 ```
 
-## 🤝 Contributing
 
-Contributions welcome! Areas for improvement:
-- Enhanced LSTM architectures
-- Additional weather data sources
-- Real-time database integration
-- Mobile app development
-- Advanced visualization features
-
-## 📄 License
+##  License
 
 MIT License - Free for academic and commercial use
 
-## 📧 Support
+##  Support
 
 For questions or issues:
 1. Check the API documentation
@@ -353,7 +345,7 @@ For questions or issues:
 3. Examine browser console for errors
 4. Check Flask server logs
 
-## � Achievements
+##  Achievements
 
 ✅ **94% prediction accuracy** validated on historical data  
 ✅ **Real-time processing** of 1,000+ smart meters  
