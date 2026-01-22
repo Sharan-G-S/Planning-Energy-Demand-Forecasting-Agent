@@ -1,21 +1,20 @@
 # ⚡ Energy Demand Forecasting Agent
-
 # Sharan G S
 
-**LSTM-based AI system for smart grid optimization with 94% prediction accuracy**
+**LSTM-based AI system for smart grid optimization with prediction accuracy**
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-3.0-green.svg)
 ![Accuracy](https://img.shields.io/badge/Accuracy-94%25-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## � Project Overview
+##  Project Overview
 
 Designed and deployed an **LSTM-based Energy Demand Forecasting Agent** capable of predicting hourly power load with **94% accuracy** by fusing historical smart meter data with real-time weather APIs, enabling optimized load balancing for smart grid applications.
 
 ##  Key Features
 
-### Advanced Machine Learning
+### 🤖 Advanced Machine Learning
 - **LSTM Neural Networks**: Deep learning architecture for sequential pattern recognition
 - **Statistical Ensemble**: Combines multiple forecasting methods for superior accuracy
 - **94% Prediction Accuracy**: Validated against historical data
@@ -28,26 +27,26 @@ Designed and deployed an **LSTM-based Energy Demand Forecasting Agent** capable 
 - **Historical Analysis**: 365 days of consumption patterns
 - **Real-time Aggregation**: Sub-second data processing and aggregation
 
-### Smart Grid Optimization
+###  Smart Grid Optimization
 - **Load Balancing**: Intelligent distribution recommendations
 - **Peak Demand Management**: Identifies and mitigates peak load periods
 - **Cost Optimization**: Calculates potential savings through load shifting
 - **Renewable Integration**: Recommendations for solar/wind energy utilization
 - **Grid Stability Monitoring**: Real-time capacity and load factor tracking
 
-### Anomaly Detection
+###  Anomaly Detection
 - **Multi-Method Detection**: Z-score, IQR, and pattern-based analysis
 - **Real-time Alerts**: Immediate notification of unusual patterns
 - **Severity Classification**: Prioritizes alerts by impact level
 - **Smart Meter Monitoring**: Individual meter anomaly detection
 
-### Interactive Dashboard
+###  Interactive Dashboard
 - **Modern UI/UX**: Dark theme with glassmorphism effects
 - **Real-time Visualizations**: Dynamic charts with Chart.js
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Auto-refresh**: Live data updates every 30 seconds
 
-## Quick Start
+##  Quick Start
 
 ### Installation
 
@@ -71,7 +70,7 @@ The system will automatically:
 3. Initialize weather API integration
 4. Start the web dashboard
 
-## Performance Metrics
+##  Performance Metrics
 
 ### Model Accuracy
 - **Overall Accuracy**: 94%
@@ -85,7 +84,7 @@ The system will automatically:
 - **Forecast Generation**: <2 seconds for 30-day predictions
 - **Memory Footprint**: ~150MB
 
-## Architecture
+##  Architecture
 
 ### Data Flow
 ```
@@ -116,7 +115,7 @@ Smart Meters → Data Aggregation → Feature Engineering → LSTM Model → Pre
 - Weather data cache
 - Model checkpoints
 
-## API Endpoints
+##  API Endpoints
 
 ### Predictions
 ```bash
@@ -148,7 +147,7 @@ GET /api/stats
 ```
 Current grid status, load factors, and system health
 
-## Use Cases
+##  Use Cases
 
 ### Utility Companies
 - Optimize power generation scheduling
@@ -174,7 +173,7 @@ Current grid status, load factors, and system health
 - Sustainability initiatives
 - Infrastructure planning
 
-## 🔧 Technical Implementation
+##  Technical Implementation
 
 ### LSTM Model Architecture
 ```python
@@ -241,7 +240,7 @@ Energy Demand Forecasting Agent/
     └── ensemble_stats.pkl        # Trained model weights
 ```
 
-##  Key Technologies
+## � Key Technologies
 
 - **Machine Learning**: LSTM, Statistical Forecasting, Ensemble Methods
 - **Backend**: Python, Flask, NumPy, Pandas, Scikit-learn
@@ -250,7 +249,7 @@ Energy Demand Forecasting Agent/
 - **APIs**: RESTful architecture, JSON responses
 - **Visualization**: Chart.js, Custom CSS animations
 
-##  Model Training
+## 🔬 Model Training
 
 ### Data Preparation
 1. Collect 365 days of smart meter readings
@@ -291,34 +290,13 @@ Energy Demand Forecasting Agent/
 - Optimize energy storage
 - Reduce fossil fuel dependency
 
-## 🌐 Advanced Features ✅
+## 🌐 Future Enhancements
 
-### Implemented Features
-- [x] **Multi-region forecasting** - Forecast across 5 geographic regions with inter-regional optimization
-- [x] **Electric vehicle load prediction** - Smart charging optimization for 5,000+ EVs with V2G support
-- [x] **Battery storage optimization** - 100 MWh/50 MW system with peak shaving and arbitrage
-- [x] **Distributed energy resource management** - Solar, wind, battery, and backup generation coordination
-
-**See [ADVANCED_FEATURES.md](ADVANCED_FEATURES.md) for complete documentation**
-
-### Advanced API Endpoints
-
-```bash
-# Multi-region forecasting
-GET /api/advanced/multi-region?hours=24
-
-# EV load prediction
-GET /api/advanced/ev-load?hours=24
-
-# Battery optimization
-GET /api/advanced/battery
-
-# DER management
-GET /api/advanced/der?hours=24
-
-# Features summary
-GET /api/advanced/summary
-```
+### Advanced Features
+- [ ] Multi-region forecasting
+- [ ] Electric vehicle load prediction
+- [ ] Battery storage optimization
+- [ ] Distributed energy resource management
 
 ### Integration
 - [ ] Real utility smart meter APIs
