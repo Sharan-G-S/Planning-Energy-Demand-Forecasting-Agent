@@ -28,8 +28,20 @@ from utils.grid_optimizer import GridOptimizer
 from utils.anomaly_detector import AnomalyDetector
 from models.ensemble_predictor_simple import EnsemblePredictor
 
+# Import advanced features API
+try:
+    from api_advanced import register_advanced_routes
+    ADVANCED_FEATURES = True
+except ImportError:
+    ADVANCED_FEATURES = False
+    print("Advanced features not available")
+
 app = Flask(__name__)
 CORS(app)
+
+# Register advanced features if available
+if ADVANCED_FEATURES:
+    register_advanced_routes(app)
 
 historical_data = None
 ensemble_model = None
